@@ -9,6 +9,7 @@ function Home() {
     <>
       <Header />
       <main className={styles.main} >
+        <h1>이수정 피아니스트 사이트</h1>
         <button onClick={() => navigate("/apply")}>
           신청하기
         </button>
