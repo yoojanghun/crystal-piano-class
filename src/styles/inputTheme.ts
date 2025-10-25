@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 
-const theme = createTheme({
+const inputTheme = createTheme({
   components: {
     MuiInput: {
       styleOverrides: {
@@ -25,4 +25,4 @@ const theme = createTheme({
   },
 });
 
-export default theme;
+export default inputTheme;
