@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home.tsx";
-import Apply from "../pages/Apply.jsx";
+import Home from "../pages/Home/Home.tsx";
+import Apply from "../pages/Apply.tsx";
 
 function App() {
 

@@ -1,0 +1,4 @@
+.main {
+  padding-top: 80px; /* Header 높이만큼 */
+  min-height: 100vh;
+}
