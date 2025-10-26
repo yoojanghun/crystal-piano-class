@@ -1,20 +1,19 @@
 import sujungPic from "../../assets/sujung.webp";
-import styles from "./Header.module.css";
 
 function Header() {
 
   return(
-    <header className={styles.header}>
-      <nav className={styles.nav}>
+    <header className="fixed w-full py-1 px-2.5 border-b-2 border-b-zinc-300 bg-white z-99">
+      <nav className="flex justify-between items-center">
         <img 
           src={sujungPic} 
           alt="sujung pic" 
-          className={styles.logo}
+          className="w-10 h-10 rounded-full cursor-pointer"
         />
-        <ul className={styles.navList}>
-          <li className={styles.navItem}>About us</li>
-          <li className={styles.navItem}>Program</li>
-          <li className={styles.navItem}>Recruit</li>
+        <ul className="flex items-center list-none">
+          <li className="px-7.5 cursor-pointer">About us</li>
+          <li className="px-7.5 cursor-pointer">Program</li>
+          <li className="px-7.5 cursor-pointer">Recruit</li>
         </ul>
       </nav>
     </header>

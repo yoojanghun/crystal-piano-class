@@ -1,7 +1,6 @@
 import Header from "../../shared/header/Header.tsx";
 import IsMajor from "./components/IsMajor.tsx";
 import Questions from "./components/Questions.tsx";
-import styles from "./Apply.module.css";
 import { 
   TextField, 
   Button, 
@@ -73,7 +72,7 @@ function Apply() {
   return(
     <>
       <Header />
-      <main className={styles["main-apply"]}>
+      <main className="pt-12">
         <h1>레슨 접수 페이지 입니다</h1>
         {applyPage === 1 && (
           <div>
