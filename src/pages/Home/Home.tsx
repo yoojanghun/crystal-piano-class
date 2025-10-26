@@ -1,4 +1,4 @@
-import Header from "../../shared/Header/Header.tsx";
+import Header from "../../shared/header/Header.tsx";
 import styles from "./Home.module.css";
 import { Button, ThemeProvider } from "@mui/material";
 import btnTheme from "../../styles/btnTheme.ts";

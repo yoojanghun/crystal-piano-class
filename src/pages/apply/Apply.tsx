@@ -1,4 +1,6 @@
-import Header from "../../shared/Header/Header.tsx";
+import Header from "../../shared/header/Header.tsx";
+import IsMajor from "./components/IsMajor.tsx";
+import Questions from "./components/Questions.tsx";
 import styles from "./Apply.module.css";
 import { 
   TextField, 
@@ -11,6 +13,7 @@ import {
 import { IMaskInput } from "react-imask";
 import inputTheme from "../../styles/inputTheme.ts";
 import btnTheme from "../../styles/btnTheme.ts";
+import { useApplyPage } from "../../shared/apply/apply.ts";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
@@ -41,7 +44,8 @@ const PhoneNumCustom = React.forwardRef<HTMLInputElement, CustomProps>(
 {/* useState는 다음 렌더링 때, 특정 값으로 바꿔달라고 요청만 하는 것 (useState의 비동기 특성) */}
 function Apply() {
   const navigate = useNavigate();
-  const [applyPage, setApplyPage] = useState(1);
+  const applyPage = useApplyPage(state => state.applyPage);
+  const increasePage = useApplyPage(state => state.increasePage);
   const [username, setUsername] = useState("");
   const [userage, setUserage] = useState("");
   const [error, setError] = useState(true);
@@ -49,14 +53,7 @@ function Apply() {
     textmask: '',
     numberformat: '1320',
   });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneNum({
-      ...phoneNum,
-      [event.target.name]: event.target.value,
-    });
-  };
-
+  
   useEffect(() => {
     if (username.trim() === "" || userage === "" || phoneNum.textmask === "") {
       setError(true);
@@ -64,7 +61,14 @@ function Apply() {
     else {
       setError(false);
     }
-  }, [username, userage, phoneNum.textmask])
+  }, [username, userage, phoneNum.textmask]);
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setPhoneNum({
+      ...phoneNum,
+      [e.target.name]: e.target.value,
+    });
+  }
 
   return(
     <>
@@ -119,7 +123,7 @@ function Apply() {
                     홈 페이지 돌아가기
                 </Button>
                 <Button variant="contained" 
-                  onClick={() => setApplyPage(applyPage + 1)}
+                  onClick={increasePage}
                   color="primary"
                   disabled={error}>
                     다음
@@ -131,36 +135,13 @@ function Apply() {
 
         {applyPage === 2 && (
           <div>
-            <h2>{username} 님 안녕하세요!! 지원동기가 무엇입니까?</h2>
-            <ThemeProvider theme={btnTheme}>
-              <Button variant="contained" 
-                onClick={() => setApplyPage(applyPage - 1)}
-                color="secondary">
-                  이전
-              </Button>
-              <Button variant="contained" 
-                onClick={() => setApplyPage(applyPage + 1)}
-                color="primary">
-                  다음
-              </Button>
-            </ThemeProvider>
+            <IsMajor name={username}/>
           </div>
         )}
         
         {applyPage === 3 && (
           <div>
-            <h2>질문 있으면 적어주세요</h2>
-            <TextField 
-              multiline
-              rows={5}
-            />
-            <ThemeProvider theme={btnTheme}>
-              <Button variant="contained" 
-                onClick={() => setApplyPage(applyPage - 1)}
-                color="secondary">
-                  이전
-              </Button>
-            </ThemeProvider>
+            <Questions />
           </div>
         )}
       </main>
