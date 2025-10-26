@@ -20,8 +20,8 @@ interface CustomProps {
   name: string;
 }
 
-const TextMaskCustom = React.forwardRef<HTMLInputElement, CustomProps>(
-  function TextMaskCustom(props, ref) {
+const PhoneNumCustom = React.forwardRef<HTMLInputElement, CustomProps>(
+  function PhoneNumCustom(props, ref) {
     const { onChange, ...other } = props;
     return (
       <IMaskInput
@@ -108,7 +108,7 @@ function Apply() {
                     required
                     name="textmask"
                     id="formatted-text-mask-input"
-                    inputComponent={TextMaskCustom as any}
+                    inputComponent={PhoneNumCustom as any}
                   />
                 </FormControl>
               </ThemeProvider>
