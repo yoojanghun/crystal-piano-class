@@ -7,7 +7,7 @@ function Questions() {
 
   return(
     <>
-      <h2>질문 있으면 적어주세요</h2>
+      <h2>하고 싶은 말이나 질문 있으면 적어주세요!!</h2>
         <TextField 
           multiline
           rows={5}
