@@ -10,16 +10,18 @@ function Home() {
   return (
     <>
       <Header />
-      <main className="min-h-screen pt-12" >
-        <section className="w-screen h-screen overflow-hidden">
+      <main className="min-h-screen" >
+        <section className="w-screen h-screen overflow-hidden relative">
           <img src={backgroundPiano} className="w-full h-full object-cover object-[center_70%]" alt="piano-background-pic" />
+          <div className="bg-black/25 rounded-3xl absolute inset-0 flex flex-col justify-center items-center">
+            <h1 className="text-white">이수정 피아니스트 사이트</h1>
+            <ThemeProvider theme={btnTheme}>
+              <Button variant="contained" onClick={() => navigate("/apply")}>
+                신청하기
+              </Button>
+            </ThemeProvider>
+          </div>
         </section>
-        <h1 className="bg-red-400">이수정 피아니스트 사이트</h1>
-        <ThemeProvider theme={btnTheme}>
-          <Button variant="contained" onClick={() => navigate("/apply")}>
-            신청하기
-          </Button>
-        </ThemeProvider>
       </main>
     </>
   );
