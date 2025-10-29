@@ -13,7 +13,7 @@ function Home() {
 
   const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
     if(ref.current) {
-      const y = ref.current.getBoundingClientRect().top + window.scrollY - 50;
+      const y = ref.current.getBoundingClientRect().top + window.scrollY - 70;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   } 
