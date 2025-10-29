@@ -1,7 +1,14 @@
 import sujungLogo from "../../assets/sujung-logo.jpg";
 import { useNavigate } from "react-router-dom";
 
-function Header() {
+type ScrollProps = {
+  // onScroll 객체
+  onScroll: {
+    instructor: () => void;
+  }
+}
+
+function Header({ onScroll }: ScrollProps) {
 
   const navigate = useNavigate();
 
@@ -15,7 +22,12 @@ function Header() {
           onClick={() => navigate("/")}
         />
         <ul className="flex items-center list-none">
-          <li className="px-7.5 cursor-pointer">About us</li>
+          <li 
+            className="px-7.5 cursor-pointer"
+            onClick={onScroll.instructor}
+          >
+            강사 소개
+          </li>
           <li className="px-7.5 cursor-pointer">Program</li>
           <li className="px-7.5 cursor-pointer">Recruit</li>
         </ul>

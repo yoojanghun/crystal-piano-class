@@ -1,17 +1,28 @@
 import { motion } from "framer-motion";
 import Header from "../../shared/header/Header.tsx";
 import { Button, ThemeProvider } from "@mui/material";
-import ArrowRightAlt from "@mui/icons-material/ArrowRightAlt"
 import btnTheme from "../../styles/btnTheme.ts";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 import backgroundPiano from "../../assets/piano-bg.jpg";
+import Instructor from "./components/Instructor.tsx";
 
 function Home() {
   const navigate = useNavigate();
+  const instructorRef = useRef<HTMLElement | null>(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
+    if(ref.current) {
+      const y = ref.current.getBoundingClientRect().top + window.scrollY - 50;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  } 
 
   return (
     <>
-      <Header />
+      <Header onScroll={{
+        instructor: () => scrollToSection(instructorRef)
+      }}/>
       <main className="min-h-screen" >
         <section className="w-screen h-screen overflow-hidden relative">
           <motion.img 
@@ -53,7 +64,9 @@ function Home() {
                     color: "white",
                     borderRadius: "8px",
                     fontSize: "1rem",
-                    backgroundColor: "black"
+                    backgroundColor: "#2d2d2d",
+                    "&:hover": {
+                      backgroundColor: "#000000",                     }
                   }}
                   onClick={() => navigate("/apply")}
                 >
@@ -62,6 +75,9 @@ function Home() {
               </ThemeProvider>
             </motion.div>
           </div>
+        </section>
+        <section ref={instructorRef}>
+          <Instructor />
         </section>
       </main>
     </>
