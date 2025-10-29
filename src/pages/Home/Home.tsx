@@ -35,15 +35,15 @@ function Home() {
           />
           <div className="bg-black/25 absolute inset-0 flex flex-col justify-center items-center">
             <motion.h1 
-              className="text-white text-4xl mb-3"
+              className="text-white text-4xl mb-5"
               initial={{ opacity:0, y: 30 }}
               animate={{ opacity:1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
             >
-              이수정 피아니스트 사이트
+              이수정 피아노 레슨
             </motion.h1>
             <motion.p 
-              className="text-white leading-6.5 text-center text-lg mb-3"
+              className="text-white leading-6.5 text-center text-lg mb-5"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.5 }}
@@ -76,7 +76,7 @@ function Home() {
             </motion.div>
           </div>
         </section>
-        <section ref={instructorRef}>
+        <section className="mt-20" ref={instructorRef}>
           <Instructor />
         </section>
       </main>
