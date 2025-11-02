@@ -44,11 +44,11 @@ function Instructor() {
 
   return(
     <>
-      <div className="flex flex-col items-center bg-[#F9FAFB] border-b-2 border-zinc-200 pb-5">
-        <h2 className="text-4xl mb-6 font-bold">강사 소개</h2>
+      <div className="flex flex-col items-center border-b-2 border-zinc-200 pb-5">
+        <h2 className="text-4xl mb-6 font-medium">PIANIST 이수정</h2>
         <img 
           src={sujung} 
-          className="rounded-full w-1/3 max-w-xl min-w-xs max-h-fit mb-3" 
+          className="rounded-full w-1/3 max-w-xl min-w-xs max-h-fit mb-5" 
           alt="sujung-pic" 
         />
         <div className="max-w-xl min-w-[360px]">

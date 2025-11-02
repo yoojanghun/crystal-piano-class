@@ -14,7 +14,7 @@ function Home() {
 
   const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
     if(ref.current) {
-      const y = ref.current.getBoundingClientRect().top + window.scrollY - 70;
+      const y = ref.current.getBoundingClientRect().top + window.scrollY - 50;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   } 
@@ -77,10 +77,10 @@ function Home() {
             </motion.div>
           </div>
         </section>
-        <section className="mt-20" ref={instructorRef}>
+        <section className="pt-20 bg-[#F9FAFB]" ref={instructorRef}>
           <Instructor />
         </section>
-        <section>
+        <section className="pt-15">
           <LessonInfo />
         </section>
       </main>
