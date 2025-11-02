@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import backgroundPiano from "../../assets/piano-bg.jpg";
 import Instructor from "./components/Instructor.tsx";
+import LessonInfo from "./components/LessonInfo.tsx";
 
 function Home() {
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ function Home() {
                     fontSize: "1rem",
                     backgroundColor: "#2d2d2d",
                     "&:hover": {
-                      backgroundColor: "#000000",                     }
+                      backgroundColor: "#000000"}
                   }}
                   onClick={() => navigate("/apply")}
                 >
@@ -78,6 +79,9 @@ function Home() {
         </section>
         <section className="mt-20" ref={instructorRef}>
           <Instructor />
+        </section>
+        <section>
+          <LessonInfo />
         </section>
       </main>
     </>

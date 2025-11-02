@@ -2,7 +2,6 @@ import sujungLogo from "../../assets/sujung-logo.jpg";
 import { useNavigate } from "react-router-dom";
 
 type ScrollProps = {
-  // onScroll 객체
   onScroll: {
     instructor: () => void;
   }
@@ -24,7 +23,7 @@ function Header({ onScroll }: ScrollProps) {
         <ul className="flex items-center list-none">
           <li 
             className="px-7.5 cursor-pointer"
-            onClick={onScroll.instructor}
+            onClick={onScroll?.instructor}
           >
             강사 소개
           </li>
