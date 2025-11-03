@@ -1,4 +1,4 @@
-import Header from "../../shared/header/Header.tsx";
+import Header from "../../shared/Header/Header.tsx";
 import IsMajor from "./components/IsMajor.tsx";
 import Questions from "./components/Questions.tsx";
 import { 

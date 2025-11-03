@@ -2,7 +2,7 @@ import sujungLogo from "../../assets/sujung-logo.jpg";
 import { useNavigate } from "react-router-dom";
 
 type ScrollProps = {
-  onScroll: {
+  onScroll?: {                  // onScroll을 받는다면 onScroll 사용
     instructor: () => void;
   }
 }

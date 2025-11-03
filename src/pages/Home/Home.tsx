@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Header from "../../shared/header/Header.tsx";
+import Header from "../../shared/Header/Header.tsx";
 import { Button, ThemeProvider } from "@mui/material";
 import btnTheme from "../../styles/btnTheme.ts";
 import { useNavigate } from "react-router-dom";
