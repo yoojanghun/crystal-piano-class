@@ -24,7 +24,7 @@ function Home() {
       <Header onScroll={{
         instructor: () => scrollToSection(instructorRef)
       }}/>
-      <main className="min-h-screen" >
+      <main className="min-h-screen">
         <section className="w-screen h-screen overflow-hidden relative">
           <motion.img 
             src={backgroundPiano} 

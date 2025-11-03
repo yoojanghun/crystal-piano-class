@@ -1,5 +1,10 @@
 import sujungLogo from "../../assets/sujung-logo.jpg";
 import { useNavigate } from "react-router-dom";
+import { 
+  Button,
+  Menu,
+  MenuItem
+} from "@mui/material";
 
 type ScrollProps = {
   onScroll: {
@@ -18,7 +23,10 @@ function Header({ onScroll }: ScrollProps) {
           src={sujungLogo} 
           alt="sujung pic" 
           className="w-10 h-10 cursor-pointer ml-4"
-          onClick={() => navigate("/")}
+          onClick={() => {
+            navigate("/");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
         />
         <ul className="flex items-center list-none">
           <li 

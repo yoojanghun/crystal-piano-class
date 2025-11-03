@@ -2,6 +2,7 @@ import {
   SchoolOutlined, 
   Piano
 } from "@mui/icons-material";
+import { Card } from "@mui/material";
 
 function LessonInfo() {
   const major = [];
