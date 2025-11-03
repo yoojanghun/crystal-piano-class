@@ -11,6 +11,7 @@ import LessonInfo from "./components/LessonInfo.tsx";
 function Home() {
   const navigate = useNavigate();
   const instructorRef = useRef<HTMLElement | null>(null);
+  const lessonInfoRef = useRef<HTMLElement | null>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
     if(ref.current) {
@@ -22,7 +23,8 @@ function Home() {
   return (
     <>
       <Header onScroll={{
-        instructor: () => scrollToSection(instructorRef)
+        instructor: () => scrollToSection(instructorRef),
+        lessonInfo: () => scrollToSection(lessonInfoRef)
       }}/>
       <main className="min-h-screen" >
         <section className="w-screen h-screen overflow-hidden relative">
@@ -80,7 +82,7 @@ function Home() {
         <section className="pt-20 bg-[#F9FAFB]" ref={instructorRef}>
           <Instructor />
         </section>
-        <section className="pt-15">
+        <section className="pt-15" ref={lessonInfoRef}>
           <LessonInfo />
         </section>
       </main>
