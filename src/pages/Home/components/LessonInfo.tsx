@@ -4,8 +4,6 @@ import {
 } from "@mui/icons-material";
 
 function LessonInfo() {
-  const major = [];
-  const hobby = [];
 
   return(
     <>
