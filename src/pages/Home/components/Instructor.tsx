@@ -44,58 +44,103 @@ function Instructor() {
 
   return(
     <>
-      <div className="flex flex-col items-center border-b-2 border-zinc-200 pb-5">
-        <h2 className="text-4xl mb-6 font-medium">PIANIST 이수정</h2>
-        <img 
-          src={sujung} 
-          className="rounded-full w-1/3 max-w-xl min-w-xs max-h-fit mb-5" 
-          alt="sujung-pic" 
-        />
-        <div className="max-w-xl min-w-[360px]">
-          <div className="mb-3 px-3">
-            <h4 className="flex items-center text-xl">
-              <SchoolOutlined sx={{ marginRight: "4px", marginBottom: "2px", fontSize: "1.1em" }}/> 학력
-            </h4>
-            <ul className="ml-7">
-              {education.map((item, index) => 
-                <li key={index}>
-                  <div className="flex">
-                    <span className="mr-2">{item.year}</span> 
-                    <span className="break-keep">{item.title}</span>
-                  </div>
-                </li>
-              )}
-            </ul>
+      <div className="flex flex-col items-center px-4 py-12 sm:px-6 lg:px-8">
+        <div className="w-full max-w-4xl">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 mb-3 block">
+              Professional Pianist
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+              PIANIST 이수정
+            </h2>
+            <div className="flex justify-center mb-8">
+              <div className="relative">
+                <img 
+                  src={sujung} 
+                  className="rounded-full w-48 h-48 sm:w-56 sm:h-56 object-cover ring-4 ring-white/80 outline outline-indigo-100/70" 
+                  alt="sujung-pic" 
+                />
+                <div className="absolute inset-0 rounded-full bg-linear-to-br from-indigo-100/30 to-purple-100/30 -z-10 blur-2xl"></div>
+              </div>
+            </div>
           </div>
-          <div className="mb-3 px-3">
-            <h4 className="flex items-center text-xl">
-              <WorkspacePremiumOutlined sx={{ marginRight: "4px", marginBottom: "2px", fontSize: "1.1em" }}/>입상 경력
-            </h4>
-            <ul className="ml-7">
-              {achievments.map((item, index) => 
-                <li key={index} className="mb-1.5">
-                  <div className="flex">
-                    <span className="mr-1">•</span>
-                    <span className="break-keep whitespace-pre-line">{item}</span>
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
-          <div className="mb-3 px-3">
-            <h4 className="flex items-center text-xl">
-              <MusicNoteOutlined sx={{ marginRight: "2px", marginBottom: "2px", fontSize: "1.1em" }}/> 연주 활동
-            </h4>
-            <ul className="ml-7">
-              {performances.map((item, index) => 
-                <li key={index} className="mb-1.5">
-                  <div className="flex">
-                    <span className="mr-1">•</span>
-                    <span className="break-keep whitespace-pre-line">{item}</span>
-                  </div>
-                </li>
-              )}
-            </ul>
+
+          {/* Content Sections */}
+          <div className="grid gap-6 sm:gap-8">
+            {/* 학력 Section */}
+            <div className="bg-linear-to-br from-white/90 to-white/60 rounded-2xl p-6 sm:p-8 border border-slate-200/80 ring-1 ring-white/60 backdrop-blur-sm">
+              <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
+                <SchoolOutlined 
+                  sx={{ 
+                    marginRight: "8px", 
+                    fontSize: "1.3em",
+                    color: "#6366f1"
+                  }}
+                /> 
+                학력
+              </h4>
+              <ul className="space-y-4">
+                {education.map((item, index) => 
+                  <li key={index} className="flex items-start gap-4 group">
+                    <span className="shrink-0 w-16 sm:w-20 text-sm sm:text-base font-semibold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-lg text-center">
+                      {item.year}
+                    </span> 
+                    <span className="flex-1 text-slate-700 leading-relaxed break-keep pt-1.5">
+                      {item.title}
+                    </span>
+                  </li>
+                )}
+              </ul>
+            </div>
+
+            {/* 입상 경력 Section */}
+            <div className="bg-linear-to-br from-white/90 to-white/60 rounded-2xl p-6 sm:p-8 border border-slate-200/80 ring-1 ring-white/60 backdrop-blur-sm">
+              <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
+                <WorkspacePremiumOutlined 
+                  sx={{ 
+                    marginRight: "8px", 
+                    fontSize: "1.3em",
+                    color: "#f59e0b"
+                  }}
+                />
+                입상 경력
+              </h4>
+              <ul className="space-y-3">
+                {achievments.map((item, index) => 
+                  <li key={index} className="flex items-start gap-3 group">
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-amber-500 mt-2.5 group-hover:bg-amber-600 transition-colors"></span>
+                    <span className="flex-1 text-slate-700 leading-relaxed break-keep whitespace-pre-line">
+                      {item}
+                    </span>
+                  </li>
+                )}
+              </ul>
+            </div>
+
+            {/* 연주 활동 Section */}
+            <div className="bg-linear-to-br from-white/90 to-white/60 rounded-2xl p-6 sm:p-8 border border-slate-200/80 ring-1 ring-white/60 backdrop-blur-sm">
+              <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
+                <MusicNoteOutlined 
+                  sx={{ 
+                    marginRight: "8px", 
+                    fontSize: "1.3em",
+                    color: "#8b5cf6"
+                  }}
+                />
+                연주 활동
+              </h4>
+              <ul className="space-y-3">
+                {performances.map((item, index) => 
+                  <li key={index} className="flex items-start gap-3 group">
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-purple-500 mt-2.5 group-hover:bg-purple-600 transition-colors"></span>
+                    <span className="flex-1 text-slate-700 leading-relaxed break-keep whitespace-pre-line">
+                      {item}
+                    </span>
+                  </li>
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

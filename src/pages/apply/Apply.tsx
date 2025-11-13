@@ -81,7 +81,7 @@ function Apply() {
   );
   
   useEffect(() => {
-    if (username.trim() === "" || userage === "" || phoneNum.textmask === "") {
+    if (username.trim() === "" || userage === "" || phoneNum.textmask.length !== 13) {
       setError(true);
     }
     else {
