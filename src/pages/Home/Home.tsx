@@ -26,8 +26,8 @@ function Home() {
         instructor: () => scrollToSection(instructorRef),
         lessonInfo: () => scrollToSection(lessonInfoRef)
       }}/>
-      <main className="min-h-screen" >
-        <section className="w-screen h-screen overflow-hidden relative">
+      <main className="min-h-screen">
+        <section className="h-screen overflow-hidden relative">
           <motion.img 
             src={backgroundPiano} 
             className="w-full h-full object-cover object-[center_70%]" 
