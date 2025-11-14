@@ -14,7 +14,7 @@ function Home() {
   const lessonInfoRef = useRef<HTMLElement | null>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
-    if(ref.current) {
+    if (ref.current) {
       const y = ref.current.getBoundingClientRect().top + window.scrollY - 50;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
@@ -31,7 +31,7 @@ function Home() {
           <motion.img 
             src={backgroundPiano} 
             className="w-full h-full object-cover object-[center_70%]" 
-            alt="piano-background-pic" 
+            alt="피아노 배경 이미지" 
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -39,14 +39,14 @@ function Home() {
           <div className="bg-black/25 absolute inset-0 flex flex-col justify-center items-center">
             <motion.h1 
               className="text-white text-4xl mb-5"
-              initial={{ opacity:0, y: 30 }}
-              animate={{ opacity:1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
             >
               이수정 피아노 레슨
             </motion.h1>
             <motion.p 
-              className="text-white leading-6.5 text-center text-lg mb-5"
+              className="text-white leading-7 text-center text-lg mb-5"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.5 }}
@@ -79,10 +79,10 @@ function Home() {
             </motion.div>
           </div>
         </section>
-        <section className="pt-20 bg-[#F9FAFB]" ref={instructorRef}>
+        <section className="pt-20" ref={instructorRef}>
           <Instructor />
         </section>
-        <section className="pt-15" ref={lessonInfoRef}>
+        <section className="pt-16" ref={lessonInfoRef}>
           <LessonInfo />
         </section>
       </main>

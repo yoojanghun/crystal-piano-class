@@ -61,7 +61,6 @@ function Instructor() {
                   className="rounded-full w-48 h-48 sm:w-56 sm:h-56 object-cover ring-4 ring-white/80 outline outline-indigo-100/70" 
                   alt="sujung-pic" 
                 />
-                <div className="absolute inset-0 rounded-full bg-linear-to-br from-indigo-100/30 to-purple-100/30 -z-10 blur-2xl"></div>
               </div>
             </div>
           </div>
@@ -75,7 +74,7 @@ function Instructor() {
                   sx={{ 
                     marginRight: "8px", 
                     fontSize: "1.3em",
-                    color: "#6366f1"
+                    color: "#393E46"
                   }}
                 /> 
                 학력
@@ -83,7 +82,7 @@ function Instructor() {
               <ul className="space-y-4">
                 {education.map((item, index) => 
                   <li key={index} className="flex items-start gap-4 group">
-                    <span className="shrink-0 w-16 sm:w-20 text-sm sm:text-base font-semibold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-lg text-center">
+                    <span className="text-sm sm:text-base font-semibold text-[#393E46] py-1.5 text-center">
                       {item.year}
                     </span> 
                     <span className="flex-1 text-slate-700 leading-relaxed break-keep pt-1.5">
@@ -101,7 +100,7 @@ function Instructor() {
                   sx={{ 
                     marginRight: "8px", 
                     fontSize: "1.3em",
-                    color: "#f59e0b"
+                    color: "#393E46"
                   }}
                 />
                 입상 경력
@@ -109,7 +108,7 @@ function Instructor() {
               <ul className="space-y-3">
                 {achievments.map((item, index) => 
                   <li key={index} className="flex items-start gap-3 group">
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-amber-500 mt-2.5 group-hover:bg-amber-600 transition-colors"></span>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-[#393E46] mt-2.5"></span>
                     <span className="flex-1 text-slate-700 leading-relaxed break-keep whitespace-pre-line">
                       {item}
                     </span>
@@ -125,7 +124,7 @@ function Instructor() {
                   sx={{ 
                     marginRight: "8px", 
                     fontSize: "1.3em",
-                    color: "#8b5cf6"
+                    color: "#393E46"
                   }}
                 />
                 연주 활동
@@ -133,7 +132,7 @@ function Instructor() {
               <ul className="space-y-3">
                 {performances.map((item, index) => 
                   <li key={index} className="flex items-start gap-3 group">
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-purple-500 mt-2.5 group-hover:bg-purple-600 transition-colors"></span>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-[#393E46] mt-2.5"></span>
                     <span className="flex-1 text-slate-700 leading-relaxed break-keep whitespace-pre-line">
                       {item}
                     </span>
