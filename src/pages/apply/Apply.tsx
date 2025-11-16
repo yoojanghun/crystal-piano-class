@@ -99,7 +99,7 @@ function Apply() {
   return(
     <>
       <Header />
-      <main className="min-h-screen bg-slate-50 px-4 py-16 sm:px-6 lg:px-8">
+      <main className="min-h-screen bg-slate-50 px-4 py-25 sm:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-10">
           <div className="flex flex-col gap-4 text-center">
             <span className="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-500">

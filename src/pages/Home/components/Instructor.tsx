@@ -3,7 +3,7 @@ import {
   WorkspacePremiumOutlined,
   MusicNoteOutlined
 } from "@mui/icons-material";
-import sujung from "../../../assets/sujung.webp";
+import sujung from "../../../assets/profile1.jpg";
 
 function Instructor() {
 
@@ -55,20 +55,17 @@ function Instructor() {
               PIANIST 이수정
             </h2>
             <div className="flex justify-center mb-8">
-              <div className="relative">
-                <img 
-                  src={sujung} 
-                  className="rounded-full w-48 h-48 sm:w-56 sm:h-56 object-cover ring-4 ring-white/80 outline outline-indigo-100/70" 
-                  alt="sujung-pic" 
-                />
-              </div>
+              <img 
+                src={sujung} 
+                alt="sujung-pic" 
+              />
             </div>
           </div>
 
           {/* Content Sections */}
           <div className="grid gap-6 sm:gap-8">
             {/* 학력 Section */}
-            <div className="bg-linear-to-br from-white/90 to-white/60 rounded-2xl p-6 sm:p-8 border border-slate-200/80 ring-1 ring-white/60 backdrop-blur-sm">
+            <div className="rounded-2xl p-6 sm:p-8 border border-slate-200/80">
               <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
                 <SchoolOutlined 
                   sx={{ 
@@ -81,7 +78,7 @@ function Instructor() {
               </h4>
               <ul className="space-y-4">
                 {education.map((item, index) => 
-                  <li key={index} className="flex items-start gap-4 group">
+                  <li key={index} className="flex items-start gap-4">
                     <span className="text-sm sm:text-base font-semibold text-[#393E46] py-1.5 text-center">
                       {item.year}
                     </span> 
@@ -94,7 +91,7 @@ function Instructor() {
             </div>
 
             {/* 입상 경력 Section */}
-            <div className="bg-linear-to-br from-white/90 to-white/60 rounded-2xl p-6 sm:p-8 border border-slate-200/80 ring-1 ring-white/60 backdrop-blur-sm">
+            <div className="rounded-2xl p-6 sm:p-8 border border-slate-200/80">
               <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
                 <WorkspacePremiumOutlined 
                   sx={{ 
@@ -118,7 +115,7 @@ function Instructor() {
             </div>
 
             {/* 연주 활동 Section */}
-            <div className="bg-linear-to-br from-white/90 to-white/60 rounded-2xl p-6 sm:p-8 border border-slate-200/80 ring-1 ring-white/60 backdrop-blur-sm">
+            <div className=" rounded-2xl p-6 sm:p-8 border border-slate-200/80">
               <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
                 <MusicNoteOutlined 
                   sx={{ 
@@ -131,7 +128,7 @@ function Instructor() {
               </h4>
               <ul className="space-y-3">
                 {performances.map((item, index) => 
-                  <li key={index} className="flex items-start gap-3 group">
+                  <li key={index} className="flex items-start gap-3">
                     <span className="shrink-0 w-2 h-2 rounded-full bg-[#393E46] mt-2.5"></span>
                     <span className="flex-1 text-slate-700 leading-relaxed break-keep whitespace-pre-line">
                       {item}
