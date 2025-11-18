@@ -32,7 +32,7 @@ function LessonInfo() {
   
   return(
     <>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-4xl">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 mb-3 block">
@@ -48,7 +48,7 @@ function LessonInfo() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+          <div className="sm:px-0 grid gap-6 sm:gap-8 md:grid-cols-2">
             {lessonInfo.map(({ title, desc, icon:Icon, items }) => (
               <article key={title} className="rounded-2xl p-6 sm:p-8 border border-slate-200/80 bg-white shadow-sm">
                 <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">

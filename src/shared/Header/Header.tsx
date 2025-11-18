@@ -58,8 +58,8 @@ function Header({ onScroll }: ScrollProps) {
               onClose={handleClose}           // 닫기 함수
               disableScrollLock={true}        // 스크롤바 안 사라지게 함
             >
-              <MenuItem onClick={onScroll?.instructor}>강사 소개</MenuItem>
-              <MenuItem onClick={onScroll?.lessonInfo}>레슨 모집</MenuItem>
+              <MenuItem onClick={() => {onScroll?.instructor(); handleClose();}}>강사 소개</MenuItem>
+              <MenuItem onClick={() => {onScroll?.lessonInfo(); handleClose();}}>레슨 모집</MenuItem>
             </Menu>
           </li>
           <li className="px-5 cursor-pointer">Program</li>
