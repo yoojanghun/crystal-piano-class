@@ -1,17 +1,28 @@
 import { 
   Accordion, 
   AccordionSummary,
-  AccordionDetails
+  AccordionDetails,
 } from "@mui/material";
 import { 
-  ArrowDropDown 
+  ArrowDropUp 
 } from "@mui/icons-material";
+import { useState } from "react";
 
 function Questions() {
+
+  const [expanded, setExpanded] = useState<string | boolean>(false);
+
+  const handleChange = (panel:string) => (
+    _event:React.SyntheticEvent,
+    isExpanded: boolean
+  ) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   return(
     <div className="w-full flex justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <div className="max-w-4xl">
-        <div className="text-center">
+      <div className="w-lg max-w-4xl">
+        <div className="text-center mb-12">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 mb-3 block">
             Questions
           </span>
@@ -26,22 +37,76 @@ function Questions() {
         </div>
 
         <div>
-          <Accordion>
-            <AccordionSummary>
-              <span>안녕하십니까</span>
-              <ArrowDropDown />
+          <Accordion 
+            disableGutters
+            expanded={expanded === "panel1"} 
+            onChange={handleChange("panel1")}
+            sx={{
+              "&.Mui-expanded": {
+                margin: 0,
+              },
+            }}
+          >
+            <AccordionSummary 
+              expandIcon={<ArrowDropUp />}
+              sx={{
+                "&.Mui-expanded": {
+                  backgroundColor: "#f1f5f9"
+                }
+              }}
+            >
+              가장 아끼는 제자가 누구인가요??
             </AccordionSummary>
             <AccordionDetails>
-              반갑습니다
+              유장훈 이에요!!
             </AccordionDetails>
           </Accordion>
-          <Accordion>
-            <AccordionSummary>
-              <span>안녕하십니까</span>
-              <ArrowDropDown />
+          <Accordion 
+            disableGutters
+            expanded={expanded === "panel2"} 
+            onChange={handleChange("panel2")}
+            sx={{
+              "&.Mui-expanded": {
+                margin: 0,
+              }
+            }}
+          >
+            <AccordionSummary 
+              expandIcon={<ArrowDropUp />}
+              sx={{
+                "&.Mui-expanded": {
+                  backgroundColor: "#f1f5f9"
+                }
+              }}
+            >
+              당신은 누구십니까?
             </AccordionSummary>
             <AccordionDetails>
-              반갑습니다
+              저는 사람입니다
+            </AccordionDetails>
+          </Accordion>
+          <Accordion 
+            disableGutters
+            expanded={expanded === "panel3"} 
+            onChange={handleChange("panel3")}
+            sx={{
+              "&.Mui-expanded": {
+                margin: 0,
+              }
+            }}
+          >
+            <AccordionSummary 
+              expandIcon={<ArrowDropUp />}
+              sx={{
+                "&.Mui-expanded": {
+                  backgroundColor: "#f1f5f9"
+                }
+              }}
+            >
+              선생님 몇살이신가요??
+            </AccordionSummary>
+            <AccordionDetails>
+              24살 입니다
             </AccordionDetails>
           </Accordion>
         </div>
