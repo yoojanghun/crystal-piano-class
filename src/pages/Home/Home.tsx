@@ -7,6 +7,7 @@ import { useRef } from "react";
 import backgroundPiano from "../../assets/piano-bg.jpg";
 import Instructor from "./components/Instructor.tsx";
 import LessonInfo from "./components/LessonInfo.tsx";
+import Questions from "./components/Questions.tsx";
 
 function Home() {
   const navigate = useNavigate();
@@ -79,11 +80,14 @@ function Home() {
             </motion.div>
           </div>
         </section>
-        <section className="pt-20" ref={instructorRef}>
+        <section className="pt-20 pb-8 bg-[#F9FAFB]" ref={instructorRef}>
           <Instructor />
         </section>
-        <section className="pt-16" ref={lessonInfoRef}>
+        <section className="pt-15 pb-8" ref={lessonInfoRef}>
           <LessonInfo />
+        </section>
+        <section className="pt-15 bg-[#F9FAFB]">
+          <Questions />
         </section>
       </main>
     </>

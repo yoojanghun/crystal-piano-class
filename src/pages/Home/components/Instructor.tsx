@@ -44,9 +44,8 @@ function Instructor() {
 
   return(
     <>
-      <div className="flex flex-col items-center px-4 py-12 sm:px-6 lg:px-8">
+      <div className="w-full flex justify-center px-4 py-12 sm:px-6 lg:px-8">
         <div className="w-full max-w-4xl">
-          {/* Header Section */}
           <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 mb-3 block">
               Professional Pianist
