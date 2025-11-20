@@ -79,10 +79,10 @@ function Questions() {
                 }
               }}
             >
-              당신은 누구십니까?
+              가장 이쁜 제자가 누구인가요?
             </AccordionSummary>
             <AccordionDetails>
-              저는 사람입니다
+              유장훈이에요!!
             </AccordionDetails>
           </Accordion>
           <Accordion 
@@ -103,10 +103,10 @@ function Questions() {
                 }
               }}
             >
-              선생님 몇살이신가요??
+              가장 소중한 제자가 누구인가요?
             </AccordionSummary>
             <AccordionDetails>
-              24살 입니다
+              유장훈 이에요!!!
             </AccordionDetails>
           </Accordion>
         </div>

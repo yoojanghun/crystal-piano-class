@@ -1,8 +1,11 @@
 import { 
   SchoolOutlined, 
   WorkspacePremiumOutlined,
-  MusicNoteOutlined
+  MusicNoteOutlined,
+  ChevronLeft,
+  ChevronRight
 } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import sujung0 from "../../../assets/profile1.jpg";
 import sujung1 from "../../../assets/profile2.jpg";
 import sujung2 from "../../../assets/profile3.jpg";
@@ -73,19 +76,43 @@ function Instructor() {
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
               PIANIST 이수정
             </h2>
-            <div className="flex justify-center mb-8 bg-stone-200 h-80 sm:h-[550px] md:h-[600px] lg:h-[700px]">
-              <img 
-                src={sujungImg[page]} 
-                alt="sujung-pic" 
-                className="w-full h-full object-contain"
-              />
+            <div className="relative w-full">
+              <div className="flex justify-center mb-8 bg-stone-200 w-full h-80 sm:h-[550px] md:h-[600px] lg:h-[700px]">
+                <img 
+                  src={sujungImg[page]} 
+                  alt="sujung-pic" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute left-0 top-1/2 -translate-y-1/2">
+                <Button 
+                  onClick={decreaseImgPage}
+                  sx={{
+                    width: 60,
+                    height: 60,
+                    "&:hover": {
+                      backgroundColor: "black"
+                    }
+                  }}
+                >
+                  <ChevronLeft />
+                </Button>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2">
+                <Button 
+                  onClick={increaseImgPage}
+                  sx={{
+                    width: 60,
+                    height: 60,
+                    "&:hover": {
+                      backgroundColor: "black"
+                    }
+                  }}
+                >
+                  <ChevronRight />
+                </Button>
+              </div>
             </div>
-            <button className="border" onClick={decreaseImgPage}>
-              뒤로
-            </button>
-            <button className="border" onClick={increaseImgPage}>
-              앞으로
-            </button>
           </div>
 
           {/* Content Sections */}
