@@ -3,9 +3,29 @@ import {
   WorkspacePremiumOutlined,
   MusicNoteOutlined
 } from "@mui/icons-material";
-import sujung from "../../../assets/profile1.jpg";
+import sujung0 from "../../../assets/profile1.jpg";
+import sujung1 from "../../../assets/profile2.jpg";
+import sujung2 from "../../../assets/profile3.jpg";
+import sujung3 from "../../../assets/profile4.jpg";
+import { useState } from "react";
 
 function Instructor() {
+
+  const [page, setPage] = useState(0);
+
+  const increaseImgPage = () => {
+    if (page < sujungImg.length - 1) {
+      setPage(prev => prev + 1);      // 현재 페이지 값을 prev로 받아 +1을 새로운 상태로
+    }
+  }
+
+  const decreaseImgPage = () => {
+    if (page > 0) {
+      setPage(prev => prev - 1);
+    }
+  }
+
+  const sujungImg = [sujung0, sujung1, sujung2, sujung3];
 
   const education = [
     { year: 2012, title: "한양대 피아노과 졸업" },
@@ -53,16 +73,23 @@ function Instructor() {
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
               PIANIST 이수정
             </h2>
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-8 bg-stone-200 h-80 sm:h-[550px] md:h-[600px] lg:h-[700px]">
               <img 
-                src={sujung} 
+                src={sujungImg[page]} 
                 alt="sujung-pic" 
+                className="w-full h-full object-contain"
               />
             </div>
+            <button className="border" onClick={decreaseImgPage}>
+              뒤로
+            </button>
+            <button className="border" onClick={increaseImgPage}>
+              앞으로
+            </button>
           </div>
 
           {/* Content Sections */}
-          <div className="grid gap-6 sm:gap-8">
+          <div className="flex flex-col gap-6 sm:gap-8">
             {/* 학력 Section */}
             <div className="rounded-2xl p-6 sm:p-8 border border-slate-200/80">
               <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
@@ -92,7 +119,7 @@ function Instructor() {
             {/* 입상 경력 Section */}
             <div className="rounded-2xl p-6 sm:p-8 border border-slate-200/80">
               <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
-                <WorkspacePremiumOutlined 
+                <WorkspacePremiumOutlined  
                   sx={{ 
                     marginRight: "8px", 
                     fontSize: "1.3em",
@@ -114,7 +141,7 @@ function Instructor() {
             </div>
 
             {/* 연주 활동 Section */}
-            <div className=" rounded-2xl p-6 sm:p-8 border border-slate-200/80">
+            <div className="rounded-2xl p-6 sm:p-8 border border-slate-200/80">
               <h4 className="flex items-center text-xl sm:text-2xl font-semibold text-slate-900 mb-6 pb-3 border-b border-slate-200">
                 <MusicNoteOutlined 
                   sx={{ 
