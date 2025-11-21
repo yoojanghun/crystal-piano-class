@@ -88,28 +88,40 @@ function Instructor() {
                 <Button 
                   onClick={decreaseImgPage}
                   sx={{
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
+                    opacity: 0.5,
                     "&:hover": {
-                      backgroundColor: "black"
-                    }
+                      backgroundColor: "#cbc9ff"
+                    },
                   }}
                 >
-                  <ChevronLeft />
+                  <ChevronLeft 
+                    sx={{
+                      fontSize: 40,
+                      color: "#615fff"
+                    }}
+                  />
                 </Button>
               </div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2">
                 <Button 
                   onClick={increaseImgPage}
                   sx={{
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
+                    opacity: 0.5,
                     "&:hover": {
-                      backgroundColor: "black"
-                    }
+                      backgroundColor: "#cbc9ff"
+                    },
                   }}
                 >
-                  <ChevronRight />
+                  <ChevronRight 
+                    sx={{
+                      fontSize: 40,
+                      color: "#615fff"
+                    }}
+                  />
                 </Button>
               </div>
             </div>
